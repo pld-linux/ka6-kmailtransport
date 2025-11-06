@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kmailtransport
 Summary:	KMail Transport
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a89cbe03529e651ed4aed440480d453f
+# Source0-md5:	28f770321e5f1c4309c96247bfb8fe06
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -93,10 +93,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libKPim6MailTransport.so.*.*
+%{_libdir}/libKPim6MailTransport.so.*.*
 %ghost %{_libdir}/libKPim6MailTransport.so.6
 %dir %{_libdir}/qt6/plugins/pim6/mailtransport
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_smtpplugin.so
+%{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_smtpplugin.so
 %{_datadir}/config.kcfg/mailtransport.kcfg
 %{_datadir}/qlogging-categories6/kmailtransport.categories
 %{_datadir}/qlogging-categories6/kmailtransport.renamecategories
